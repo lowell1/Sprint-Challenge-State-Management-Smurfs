@@ -23,10 +23,25 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+accessing data from other components without passing properties
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+actions are objects that are dispatched to the reducer which usually contain their a type like adding an item to the state or removing an item and payload which could be the new item or the index in an array to be removed.
+
+the reducer creates a copy of the current state, modifies the copy based on the action, and then returns the copy that replaces the state afterwards
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is data that the whole application can read and modifiy and component state is data that only a particular component is using. When a component needs to use the same data as another component then you would use application state. Otherwise, you should use component state.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is a type of middleware which allows you to make asynchronous requests like axios.get. You're action-creators change because instead of returning an object you're returning an inner function that takes a dispatch function as an argument and then usually calls the dispatch function after doing some delayed or asynchronous action.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+My favorite state management system is still prop drilling because it's easy to make sense of and I haven't worked on a large enough project to see the importance of redux.
 
 ## Project Set Up
 
